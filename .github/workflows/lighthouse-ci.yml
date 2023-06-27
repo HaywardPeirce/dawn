@@ -1,17 +1,44 @@
-# .github/workflows/lighthouse-ci.yml
-name: Shopify Lighthouse CI
-on: [push]
+# .github/workflows/deploy-production.yml
+name: Deploy to Production on push to main
+on:
+  push:
+    branches:
+      - main
 jobs:
-  lhci:
-    name: Lighthouse
+  lighthouse-ci:
+        name: Lighthouse
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Lighthouse
+            uses: shopify/lighthouse-ci-action@v1
+            with:
+              store: ${{ secrets.SHOP_STORE }}
+              access_token: ${{ secrets.SHOP_ACCESS_TOKEN }}
+              lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+              lhci_min_score_performance: 0.9
+              lhci_min_score_accessibility: 0.9
+  production:
+    name: Deploy to production
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@v1
+
+      # You should replace this step with your own deploy code
+      - name: Example Deploy Action
+        id: deploy
+        run: |
+          export PREVIEW_URL=https://shopify.dev/hydrogen
+          echo "::set-output name=preview_url::$PREVIEW_URL"
+
+      - name: Create GitHub Deployment
+        uses: shopify/github-deployment-action@v1
+        # We use if: always() to make sure this workflow runs pass or fail
+        # if: always()
         with:
-          store: ${{ secrets.SHOP_STORE }}
-          access_token: ${{ secrets.SHOP_ACCESS_TOKEN }}
-          lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          lhci_min_score_performance: 0.9
-          lhci_min_score_accessibility: 0.9
+          token: ${{ github.token }}
+          environment: 'production'
+          description: ${{ github.event.head_commit.message }}
+
+          # Example way to extract state from the deploy step.
+          preview_url: ${{ steps.deploy.outputs.preview_url }}
