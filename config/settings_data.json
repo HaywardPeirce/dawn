@@ -139,9 +139,20 @@
     ],
     "blocks": {
       "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {
+        }
+      },
+      "9458859355026413180": {
+        "type": "shopify://apps/try-with-mirra/blocks/try-with-mirra-modal/17eab015-3219-4f1b-8ced-c0ffd59b7b46",
+        "disabled": false,
+        "settings": {
+          "useShopFont": false,
+          "accentColor": "#000000",
+          "showTWMBannerOnCart": true,
+          "shouldOpenCartOnAddToCart": false,
+          "shouldReloadAfterAddToCart": true
         }
       }
     },
