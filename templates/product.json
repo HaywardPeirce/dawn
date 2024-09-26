@@ -111,22 +111,18 @@
             "share_label": "Share"
           }
         },
-        "try_with_mirra_try_with_mirra_product_button_YKKyWg": {
-          "type": "shopify://apps/try-with-mirra/blocks/try-with-mirra-product-button/17eab015-3219-4f1b-8ced-c0ffd59b7b46",
+        "subscriptions_app_block_NRnCjy": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
           "settings": {
-            "buttonBackgroundColor": "#000000",
-            "buttonTextColor": "#ffffff",
-            "buttonTextOption": "try-before-you-buy",
-            "maxWidth": 44,
-            "height": 3,
-            "marginTop": 0,
-            "margin": "auto",
-            "mobileWidth": "100",
-            "width": "100",
-            "mobileBreakpoint": 768,
-            "verticalAlignLogo": "middle",
-            "custom_css": "",
-            "mirra_button_classes": ""
+            "color_text_title": "#6D7175",
+            "color_text_body": "#6D7175",
+            "dividers_color": "#8F8D8D",
+            "bacgkround_color": "#FFFFFF",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "supporting_text_title": "Purchase options",
+            "subscription_policy_url": "",
+            "product": "{{product}}"
           }
         }
       },
@@ -144,7 +140,7 @@
         "collapsible-row-2",
         "collapsible-row-3",
         "share",
-        "try_with_mirra_try_with_mirra_product_button_YKKyWg"
+        "subscriptions_app_block_NRnCjy"
       ],
       "settings": {
         "enable_sticky_info": true,
