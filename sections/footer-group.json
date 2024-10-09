@@ -14,7 +14,7 @@
     "custom_liquid_9ciwhh": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% if customer %}\n\n    <a  href=\"{{ routes.account_logout_url }}\">{{ Logout }}</a>\n{% else %}\n    <a  href=\"{{ routes.account_login_url }}\">{{ Login }}</a>\n{% endif %}",
+        "custom_liquid": "{% if customer %}\n\n    <a  href=\"{{ routes.account_logout_url }}\">Logout</a>\n{% else %}\n    <a  href=\"{{ routes.account_login_url }}\">Login</a>\n{% endif %}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
