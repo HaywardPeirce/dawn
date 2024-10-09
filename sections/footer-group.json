@@ -14,7 +14,7 @@
     "custom_liquid_9ciwhh": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{% if customer %}\n            <li>\n              <a class=\"rw-link rw-link--nav\" href=\"{{ routes.account_logout_url }}\">{{ 'footer.links.logout_link' | t }}</a>\n            </li>\n          {% else %}\n            <li>\n              <a class=\"rw-link rw-link--nav\" href=\"{{ routes.account_login_url }}\">{{ 'footer.links.login_link' | t }}</a>\n            </li>\n          {% endif %}",
+        "custom_liquid": "{% if customer %}\n  <li>\n    <a class=\"rw-link rw-link--nav\" href=\"{{ routes.account_logout_url }}\">{{ Logout | t }}</a>\n  </li>\n{% else %}\n  <li>\n    <a class=\"rw-link rw-link--nav\" href=\"{{ routes.account_login_url }}\">{{ Login }}</a>\n  </li>\n{% endif %}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
